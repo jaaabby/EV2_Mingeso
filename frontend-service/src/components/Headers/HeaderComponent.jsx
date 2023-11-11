@@ -13,7 +13,6 @@ function HeaderComponent() {
                     <h1 onClick={handleClick}>TopEducation</h1>
                 </div>
                 <nav></nav>
-                <a className="btn" href="/agregar_estudiante"><button>Ingresar nuevo estudiante</button></a>
             </header>
         </div>
     )

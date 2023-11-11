@@ -122,16 +122,16 @@ function AgregarEstudianteComponent(props){
 
                     <Form.Group className="mb-3" controlId="anio_egreso" value = {input.anio_egreso} onChange={changeAnioEgresoIDHandler}>
                         <Form.Label className="agregar">Año de egreso del colegio:</Form.Label>
-                        <Form.Control className="agregar" type="date" name="anio_egreso"/>
+                        <Form.Control className="agregar" type="number" name="anio_egreso"/>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="tipo_colegio">
-                        <Form.Label className="agregar"> Tipo: </Form.Label>
+                        <Form.Label className="agregar"> Tipo de colegio: </Form.Label>
                         <select className="agregar" name="tipo_colegio" required value = {input.tipo_colegio} onChange={changeTipoColegioHandler}>
                             <option value="0" disabled>Tipo colegio</option>
-                            <option value="1">Municipal</option>
-                            <option value="2">Subvencionado</option>
-                            <option value="3">Privado</option>
+                            <option value="Municipal">Municipal</option>
+                            <option value="Subvencionado">Subvencionado</option>
+                            <option value="Privado">Privado</option>
                         </select>
                     </Form.Group>
 
@@ -141,16 +141,16 @@ function AgregarEstudianteComponent(props){
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="tipo_pago">
-                        <Form.Label className="agregar"> Tipo: </Form.Label>
+                        <Form.Label className="agregar"> Tipo de pago: </Form.Label>
                         <select className="agregar" name="tipo_pago" required value = {input.tipo_pago} onChange={changeTipoPagoHandler}>
                             <option value="0" disabled>Tipo pago</option>
-                            <option value="1">CONTADO</option>
-                            <option value="2">CUOTAS</option>
+                            <option value="Contado">CONTADO</option>
+                            <option value="Cuotas">CUOTAS</option>
                         </select>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="cant_cuotas">
-                        <Form.Label className="agregar"> Tipo: </Form.Label>
+                        <Form.Label className="agregar"> Cantidad de cuotas: </Form.Label>
                         <select className="agregar" name="cant_cuotas" required value = {input.cant_cuotas} onChange={changeCantCuotasHandler}>
                             <option value="0" disabled>Cantidad de Cuotas</option>
                             <option value="1">1</option>
@@ -165,7 +165,7 @@ function AgregarEstudianteComponent(props){
                             <option value="10">10</option>
                         </select>
                     </Form.Group>
-                    <Button className="boton" onClick={ingresarEstudiante}>Registrar Proveedor</Button>
+                    <Button className="boton" onClick={ingresarEstudiante}>Registrar estudiante</Button>
                 </Form>
             </div>
         </div>

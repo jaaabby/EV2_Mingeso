@@ -8,9 +8,6 @@ class EstudianteService {
         return axios.get(ESTUDIANTE_API_URL);
     }
 
-    getEstudianteByRut(rut){
-        return axios.get(ESTUDIANTE_API_URL + rut);
-    }
     createEstudiante(estudiante){
         return axios.post(ESTUDIANTE_API_URL, estudiante);
     }

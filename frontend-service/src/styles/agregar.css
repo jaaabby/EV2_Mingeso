@@ -19,6 +19,15 @@ input[type="text"]{
     border: 1px solid #ccc;
 }
 
+input[type="number"]{
+    background-color: rgb(201, 201, 201);
+    width: 30%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+}
+
 input[type="date"]{
     background-color: rgb(201, 201, 201);
     width: 40%;
