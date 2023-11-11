@@ -1,6 +1,7 @@
 package com.example.estudianteservice.service;
 
 import com.example.estudianteservice.entity.Estudiante;
+import com.example.estudianteservice.repository.EstudianteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 @Service
 public class EstudianteService {
     @Autowired
+    EstudianteRepository estudianteRepository;
 
     public void guardarEstudiante(String rut, String apellidos, String nombres, LocalDate fecha_nac,
                                   String tipo_colegio, String nombre_colegio, Integer año_egreso,
@@ -23,6 +25,6 @@ public class EstudianteService {
         estudiante.setAño_egreso(año_egreso);
         estudiante.setTipo_pago(tipo_pago);
         estudiante.setCant_cuotas(cant_cuotas);
-        estudianteRepository.save();
+        estudianteRepository.save(estudiante);
     }
 }
