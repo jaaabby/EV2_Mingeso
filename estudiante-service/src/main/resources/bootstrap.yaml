@@ -12,6 +12,7 @@ spring:
     name: estudiante-service
   jpa:
     database: MYSQL
+    generate-ddl: true
     show-sql: true
     hibernate:
       ddl-auto: create
@@ -22,7 +23,6 @@ spring:
   datasource:
     plataform: mysql
     driver-class-name: com.mysql.cj.jdbc.Driver
-    dbname: dbestudiante
     url: jdbc:mysql://localhost:3306/dbestudiante
     username: root
     password: Julieta0909*
