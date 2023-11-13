@@ -8,8 +8,8 @@ import "../styles/agregar.css";
 import "../styles/navbar.css";
 import Agregar from "../images/agregar-estudiante.png"
 import Estudiantes from "../images/estudiantes.png"
-//import ListaCuotas from "../images/plan-de-estudios.png"
-//import Cuota from "../images/grafico-circular.png"
+import ListaCuotas from "../images/plan-de-estudios.png"
+import Cuota from "../images/grafico-circular.png"
 import HeaderComponent from "./Headers/HeaderComponent";
 
 function MainComponents() {
@@ -20,12 +20,12 @@ function MainComponents() {
     const handleClickListaEstudiantes = () => {
         navigate("/lista_estudiantes");
     }
-    /*const handleClickGenerarCuotas = () => {
+    const handleClickGenerarCuotas = () => {
         navigate("/generar_cuotas");
-    };*/
-    /*const handleClickListaCuotas = () => {
-        navigate("/lista_cuotas");
-    };*/
+    };
+    const handleClickListaCuotas = () => {
+        navigate("/listado_cuotas");
+    };
     return (
         <div>
             <HeaderComponent></HeaderComponent>
@@ -37,6 +37,14 @@ function MainComponents() {
                 <div className="card" onClick={handleClickListaEstudiantes}>
                     <img id="lista_estudiantes" src={Estudiantes} alt="Imagen_2" />
                     <h2>Listado de Estudiantes</h2>
+                </div>
+                <div className="card" onClick={handleClickGenerarCuotas}>
+                    <img id="generar_cuotas" src={Cuota} alt="Imagen_3" />
+                    <h2>Generar Cuotas</h2>
+                </div>
+                <div className="card" onClick={handleClickListaCuotas}>
+                    <img id="listado_cuotas" src={ListaCuotas} alt="Imagen_4" />
+                    <h2>Listado Cuotas</h2>
                 </div>
             </div>
         </div>

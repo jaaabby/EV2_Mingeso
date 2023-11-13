@@ -129,9 +129,9 @@ function AgregarEstudianteComponent(props){
                         <Form.Label className="agregar"> Tipo de colegio: </Form.Label>
                         <select className="agregar" name="tipo_colegio" required value = {input.tipo_colegio} onChange={changeTipoColegioHandler}>
                             <option value="0" disabled>Tipo colegio</option>
-                            <option value="Municipal">Municipal</option>
-                            <option value="Subvencionado">Subvencionado</option>
-                            <option value="Privado">Privado</option>
+                            <option value="MUNICIPAL">MUNICIPAL</option>
+                            <option value="SUBVENCIONADO">SUBVENCIONADO</option>
+                            <option value="PRIVADO">PRIVADO</option>
                         </select>
                     </Form.Group>
 
@@ -144,8 +144,8 @@ function AgregarEstudianteComponent(props){
                         <Form.Label className="agregar"> Tipo de pago: </Form.Label>
                         <select className="agregar" name="tipo_pago" required value = {input.tipo_pago} onChange={changeTipoPagoHandler}>
                             <option value="0" disabled>Tipo pago</option>
-                            <option value="Contado">CONTADO</option>
-                            <option value="Cuotas">CUOTAS</option>
+                            <option value="CONTADO">CONTADO</option>
+                            <option value="CUOTAS">CUOTAS</option>
                         </select>
                     </Form.Group>
 

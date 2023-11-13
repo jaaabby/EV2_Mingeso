@@ -20,4 +20,7 @@ public class EstudianteService {
     public List<Estudiante> findAll(){
         return estudianteRepository.findAll();
     }
+    public Estudiante findByRut(String rut){
+        return estudianteRepository.findByRut(rut);
+    }
 }

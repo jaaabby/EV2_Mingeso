@@ -11,6 +11,10 @@ class EstudianteService {
     createEstudiante(estudiante){
         return axios.post(ESTUDIANTE_API_URL, estudiante);
     }
+
+    getEstudianteByRut(rut){
+        return axios.get(ESTUDIANTE_API_URL + rut);
+    }
 }
 
 export default new EstudianteService()

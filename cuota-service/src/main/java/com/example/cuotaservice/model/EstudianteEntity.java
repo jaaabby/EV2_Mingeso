@@ -13,10 +13,10 @@ public class EstudianteEntity {
     private String rut;
     private String apellidos;
     private String nombres;
-    private LocalDate fecha_nac;
+    private LocalDate fecha_nacimiento;
     private String tipo_colegio;
     private String nombre_colegio;
-    private Integer año_egreso;
+    private Integer anio_egreso;
     private String tipo_pago;
     private Integer cant_cuotas;
 }

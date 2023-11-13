@@ -25,4 +25,10 @@ public class EstudianteController {
         List<Estudiante> estudiantes = estudianteService.findAll();
         return ResponseEntity.ok(estudiantes);
     }
+
+    @GetMapping("/{rut}")
+    public ResponseEntity<Estudiante> findByRut(@PathVariable("rut") String rut){
+        Estudiante estudiante = estudianteService.findByRut(rut);
+        return ResponseEntity.ok(estudiante);
+    }
 }
