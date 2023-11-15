@@ -11,10 +11,10 @@ spring:
   application:
     name: estudiante-service
   jpa:
-    database: MYSQL
     generate-ddl: true
     show-sql: true
     hibernate:
+      dialect: MySQL8Dialect
       ddl-auto: create
   cloud:
     config:

@@ -11,9 +11,9 @@ spring:
   application:
     name: planilla-service
   jpa:
-    database: MYSQL
     show-sql: true
     hibernate:
+      dialect: MySQL8Dialect
       ddl-auto: create
   cloud:
     config:

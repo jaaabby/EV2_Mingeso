@@ -36,16 +36,16 @@ spec:
                 configMapKeyRef:
                   name: mysql-config-map
                   key: MYSQL_DB_ESTUDIANTE
-            - name: MYSQL_USER
+            - name: MYSQL_ROOT_USER
               valueFrom:
                 secretKeyRef:
                   name: mysql-root-credentials
-                  key: MYSQL_USER
-            - name: MYSQL_PASSWORD
+                  key: MYSQL_ROOT_USER
+            - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-root-credentials
-                  key: MYSQL_PASSWORD
+                  key: MYSQL_ROOT_PASSWORD
 ---
 apiVersion: v1
 kind: Service
