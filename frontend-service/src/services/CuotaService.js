@@ -10,6 +10,9 @@ class CuotaService {
     getCuotas(rut){
         return axios.get(CUOTAS_API_URL + rut);
     }
+    registrarPago(rut){
+        return axios.get(CUOTAS_API_URL + "pagar/" + rut);
+    }
 
 }
     

@@ -39,4 +39,16 @@ public class CuotaController {
         }
         return ResponseEntity.ok(null);
     }
+
+    @GetMapping("/pagar/{rut}")
+    public ResponseEntity<List<Cuota>> pagarCuota(@PathVariable("rut") String rut){
+        EstudianteEntity estudiante = cuotaService.findByRut(rut);
+        if(estudiante != null){
+            cuotaService.registrarPago(rut);
+            List<Cuota> cuotas = cuotaService.findCuotaByRut(rut);
+            return ResponseEntity.ok(cuotas);
+        }
+        return ResponseEntity.ok(null);
+
+    }
 }

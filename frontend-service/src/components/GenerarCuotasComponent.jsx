@@ -9,19 +9,14 @@ import CuotaService from "../services/CuotaService";
 function GenerarCuotasComponent() {
     const initialState = {
         rut: "",
-        comprobar: 0,
-        comprobarYaEntro: 1,
     };
 
-    //const [estudianteEntity, setEstudianteEntity] = useState();
-    //const [cuotasteEntity, setCuotasEntity] = useState([]);
-    //const [input, setInput] = useState(initialState);
     const [input, setInput] = useState(initialState);
     const navigate = useNavigate();
 
     const navigateHome = () => {
         navigate("/");
-    }
+    };
 
     const changeRutHandler = (event) => {
         setInput({ ...input, rut: event.target.value });
@@ -30,7 +25,6 @@ function GenerarCuotasComponent() {
     const ingresarCuotas = (event) => {
         Swal.fire({
             title: "¿Desea generar las cuotas de este estudiante?",
-            text: "No podra cambiarse en caso de equivocación",
             icon: "question",
             showDenyButton: true,
             confirmButtonText: "Confirmar",
@@ -39,9 +33,7 @@ function GenerarCuotasComponent() {
             denyButtonColor: "rgb(190, 54, 54)",
         }).then((result) => {
             if (result.isConfirmed) {
-                console.log("rut: " + input.rut + "\n");
                 CuotaService.generarCuotas(input.rut);
-                input.comprobar = 1;
                 Swal.fire({
                     title: "Enviado",
                     timer: 2000,
@@ -66,7 +58,7 @@ function GenerarCuotasComponent() {
                             <Form.Label className="agregar">Rut:</Form.Label>
                             <Form.Control className="agregar" type="text" name="rut" />
                         </Form.Group>
-                        <Button id="Generar" className="Generar" onClick={ingresarCuotas}>
+                        <Button className="boton" onClick={ingresarCuotas}>
                             Generar
                         </Button>
                     </Form>

@@ -20,12 +20,40 @@ function AgregarEstudianteComponent(props){
         cant_cuotas: "",
     };
 
+    const [cuotasOptions, setCuotasOptions] = useState([
+        { value: "0", label: "0"},
+    ]);
+    const updateCuotasOptions = (tipoPago, tipoColegio) => {
+        let nuevasOpciones = [{value: "0", label: "0"}];
+        if (tipoPago === "CONTADO"){
+            nuevasOpciones = [{value: "0", label: "0"}];
+        } else if (tipoPago === "CUOTAS"){
+            if(tipoColegio === "MUNICIPAL"){
+                nuevasOpciones = Array.from({length: 9}, (_, index) => ({ value: (index + 2).toString(), label: (index + 2).toString() }));
+            } else if (tipoColegio === "SUBVENCIONADO") {
+                nuevasOpciones = Array.from({ length: 6 }, (_, index) => ({ value: (index + 2).toString(), label: (index + 2).toString() }));
+            } else if (tipoColegio === "PRIVADO"){
+                nuevasOpciones = Array.from({ length: 3 }, (_, index) => ({ value: (index + 2).toString(), label: (index + 2).toString() }));
+            }
+        }
+        setCuotasOptions(nuevasOpciones);
+    }
     const [input, setInput] = useState(initialState);
     const navigate = useNavigate();
     const navigateHome = () => {
         navigate("/");
     };
     
+    const changeTipoPagoHandler = event => {
+        const tipoPagoValue = event.target.value;
+        setInput({ ...input, tipo_pago: tipoPagoValue });
+        updateCuotasOptions(tipoPagoValue, input.tipo_colegio);
+    };
+    const changeTipoColegioHandler = event => {
+        const tipoColegioValue = event.target.value;
+        setInput({ ...input, tipo_colegio: tipoColegioValue });
+        updateCuotasOptions(input.tipo_pago, tipoColegioValue);
+    };
     const changeRutHandler = event => {
         setInput({ ...input, rut: event.target.value });
     };
@@ -41,14 +69,8 @@ function AgregarEstudianteComponent(props){
     const changeAnioEgresoIDHandler = event => {
         setInput({ ...input, anio_egreso: event.target.value });
     };
-    const changeTipoColegioHandler = event => {
-        setInput({ ...input, tipo_colegio: event.target.value });
-    };
     const changeNombreColegioHandler = event => {
         setInput({ ...input, nombre_colegio: event.target.value });
-    };
-    const changeTipoPagoHandler = event => {
-        setInput({ ...input, tipo_pago: event.target.value });
     };
     const changeCantCuotasHandler = event => {
         setInput({ ...input, cant_cuotas: event.target.value });
@@ -152,17 +174,9 @@ function AgregarEstudianteComponent(props){
                     <Form.Group className="mb-3" controlId="cant_cuotas">
                         <Form.Label className="agregar"> Cantidad de cuotas: </Form.Label>
                         <select className="agregar" name="cant_cuotas" required value = {input.cant_cuotas} onChange={changeCantCuotasHandler}>
-                            <option value="0" disabled>Cantidad de Cuotas</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
+                            {cuotasOptions.map(option => (
+                                <option key={option.value} value={option.value}>{option.label}</option>
+                            ))}
                         </select>
                     </Form.Group>
                     <Button className="boton" onClick={ingresarEstudiante}>Registrar estudiante</Button>

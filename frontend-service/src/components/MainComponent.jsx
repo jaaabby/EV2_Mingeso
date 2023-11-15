@@ -11,6 +11,7 @@ import Estudiantes from "../images/estudiantes.png"
 import ListaCuotas from "../images/plan-de-estudios.png"
 import Cuota from "../images/grafico-circular.png"
 import HeaderComponent from "./Headers/HeaderComponent";
+import Pago from "../images/registrar-pago.png"
 
 function MainComponents() {
     const navigate = useNavigate();
@@ -26,6 +27,9 @@ function MainComponents() {
     const handleClickListaCuotas = () => {
         navigate("/listado_cuotas");
     };
+    const handleClickRegistroPago = () => {
+        navigate("/registrar_pago");
+    }
     return (
         <div>
             <HeaderComponent></HeaderComponent>
@@ -45,6 +49,10 @@ function MainComponents() {
                 <div className="card" onClick={handleClickListaCuotas}>
                     <img id="listado_cuotas" src={ListaCuotas} alt="Imagen_4" />
                     <h2>Listado Cuotas</h2>
+                </div>
+                <div className="card" onClick={handleClickRegistroPago}>
+                    <img id="registrar_pago" src={Pago} alt="Imagen_5" />
+                    <h2>Registrar Pago</h2>
                 </div>
             </div>
         </div>

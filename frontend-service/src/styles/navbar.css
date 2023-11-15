@@ -1,5 +1,5 @@
 .header{
-    background-color: #1b3039;
+    background-color: #913fa1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -9,12 +9,13 @@
 .header .logo{
     margin-right: auto;
     color: white;
-    font-family: 'Pacifico',serif;
+    font-family: 'Pacifico',cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .header .btn button{
     margin-left: 20px;
     font-weight: 700;
-    color: #1b3039;
+    color: #913fa1;
     padding: 9px 25px;
     background: #eceff1;
     border: none;

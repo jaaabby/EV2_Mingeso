@@ -7,6 +7,7 @@ import ListadoEstudianteComponent from "./components/ListadoEstudianteComponent"
 import BuscarCuotasComponent from "./components/BuscarCuotasComponent";
 import GenerarCuotasComponent from "./components/GenerarCuotasComponent";
 import ListadoCuotasComponent from "./components/ListadoCuotasComponent";
+import RegistrarPagoComponent from "./components/RegistrarPagoComponent";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/generar_cuotas" element={<GenerarCuotasComponent />} />
                     <Route path="/listado_cuotas" element={<BuscarCuotasComponent />} />
                     <Route path="/listado_cuotas/:rut" element={<ListadoCuotasComponent />} />
+                    <Route path="/registrar_pago" element={<RegistrarPagoComponent />} />
                 </Routes>
             </Router>
         </div>

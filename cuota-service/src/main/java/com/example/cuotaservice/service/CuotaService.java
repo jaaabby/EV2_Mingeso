@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,5 +64,20 @@ public class CuotaService {
 
     public List<Cuota> findCuotaByRut(String rut){
         return cuotaRepository.findCuotaByRut(rut);
+    }
+
+    public void registrarPago(String rut){
+        int diaActual = LocalDate.now().getDayOfMonth();
+        if(diaActual >= 12 && diaActual <= 20){
+            List<Cuota> cuotasEstudiante = findCuotaByRut(rut);
+            for (int i = 0; i < cuotasEstudiante.size();i++){
+                Cuota cuota = cuotasEstudiante.get(i);
+                if (cuota.getEstado().equals("PENDIENTE")){
+                    cuota.setEstado("PAGADO");
+                    cuotaRepository.save(cuota);
+                    break;
+                }
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 function ListadoCuotasComponent(){
 
     const {rut} = useParams();
-    const [cuotaEntity, setCuotaEntity] = useState(null);
+    const [cuotaEntity, setCuotaEntity] = useState([]);
     useEffect(() => {
         CuotaService.getCuotas(rut).then((res) => {
             setCuotaEntity(res.data);
