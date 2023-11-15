@@ -15,8 +15,8 @@ spec:
         app: planilla-deployment
     spec:
       containers:
-        - name: topeducation-planilla-mysql
-          image: jvergara1609/topeducation-planilla-mysql:latest
+        - name: kubernetes-planilla
+          image: jvergara1609/kubernetes-planilla:latest
           ports:
             - containerPort: 8081
           env:
@@ -39,12 +39,12 @@ spec:
             - name: MYSQL_USER
               valueFrom:
                 secretKeyRef:
-                  name: mysql-credentials
+                  name: mysql-root-credentials
                   key: MYSQL_USER
             - name: MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mysql-credentials
+                  name: mysql-root-credentials
                   key: MYSQL_PASSWORD
 ---
 apiVersion: v1

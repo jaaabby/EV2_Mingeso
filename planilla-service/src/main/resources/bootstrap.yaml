@@ -1,3 +1,9 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka/
 spring:
   devtools:
     restart:
@@ -17,9 +23,9 @@ spring:
     plataform: mysql
     driver-class-name: com.mysql.cj.jdbc.Driver
     dbname: dbplanilla
-    url: jdbc:mysql://localhost:3306/dbplanilla
-    username: root
-    password: Julieta0909*
+    url: jdbc:mysql://${MYSQL_DB_HOST}:3306/${MYSQL_DB_PLANILLA}?autorReconnect=true&allowPublicKeyRetrieval=true&useSSL=false
+    username: ${MYSQL_ROOT_USER}
+    password: $[MYSQL_ROOT_PASSWORD]
   servlet:
     multipart:
       max-file-size: 5MB

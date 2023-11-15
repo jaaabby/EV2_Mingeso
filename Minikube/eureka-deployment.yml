@@ -15,8 +15,8 @@ spec:
         app: eureka-deployment
     spec:
       containers:
-        - name: topeducation-eureka-mysql
-          image: jvergara1609/topeducation-eureka-mysql:latest
+        - name: kubernetes-eureka
+          image: jvergara1609/kubernetes-eureka:latest
           ports:
             - containerPort: 8081
           env:

@@ -15,8 +15,8 @@ spec:
         app: frontend-deployment
     spec:
       containers:
-        - name: topeducation-frontend-mysql
-          image: jvergara1609/topeducation-frontend-mysql:latest
+        - name: kubernetes-frontend
+          image: jvergara1609/kubernetes-frontend:latest
           ports:
             - containerPort: 3000
 ---

@@ -1,0 +1,13 @@
+kubectl apply -f mysql-secrets.yml
+kubectl apply -f mysql-configmap.yml
+kubectl apply -f mysql-dp-sv-pvc.yml
+
+kubectl apply -f frontend-deployment.yml
+kubectl apply -f config-deployment.yml
+
+kubectl apply -f eureka-deployment.yml
+
+kubectl apply -f estudiante-deployment.yml
+kubectl apply -f cuota-deployment.yml
+kubectl apply -f planilla-deployment.yml
+kubectl apply -f gateway-deployment.yml

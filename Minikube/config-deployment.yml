@@ -15,8 +15,8 @@ spec:
         app: config-deployment
     spec:
       containers:
-        - name: topeducation-config-mysql
-          image: jvergara1609/topeducation-config-mysql:latest
+        - name: kubernetes-config
+          image: jvergara1609/kubernetes-config:latest
           ports:
             - containerPort: 8081
 ---
