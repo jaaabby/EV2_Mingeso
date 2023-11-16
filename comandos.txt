@@ -12,7 +12,7 @@ kubectl apply -f mysql-secrets.yml
 kubectl apply -f mysql-configmap.yml
 kubectl apply -f mysql-dp-sv-pvc.yml
 
-kubectl exec -it <Nombre pod MYSQL> -- mysql -uroot -pJulieta0909*
+kubectl exec -it <Nombre pod MYSQL> -- mysql -uroot -p
 CREATE DATABASE dbcuota;
 CREATE DATABASE dbestudiante;
 CREATE DATABASE dbplanilla;
@@ -34,3 +34,11 @@ kubectl delete deployments planilla-deployment
 kubectl delete deployments gateway-deployment
 
 kubectl logs <> -f
+kubectl get pods
+
+mvn clean install -DskipTests=True
+docker build -t jvergara1609/kubernetes- .
+docker push jvergara1609/kubernetes-
+
+minikube service frontend-service
+minikube tunnel
