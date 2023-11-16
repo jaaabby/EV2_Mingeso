@@ -19,10 +19,18 @@ CREATE DATABASE dbplanilla;
 
 kubectl apply -f frontend-deployment.yml
 kubectl apply -f config-deployment.yml
-
 kubectl apply -f eureka-deployment.yml
-
 kubectl apply -f estudiante-deployment.yml
 kubectl apply -f cuota-deployment.yml
 kubectl apply -f planilla-deployment.yml
 kubectl apply -f gateway-deployment.yml
+
+kubectl delete deployments frontend-deployment
+kubectl delete deployments config-deployment
+kubectl delete deployments eureka-deployment
+kubectl delete deployments estudiante-deployment
+kubectl delete deployments cuota-deployment
+kubectl delete deployments planilla-deployment
+kubectl delete deployments gateway-deployment
+
+kubectl logs <> -f

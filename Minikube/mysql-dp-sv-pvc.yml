@@ -57,18 +57,13 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mysql-root-credentials
+                  name: mysql-credentials
                   key: MYSQL_ROOT_PASSWORD
             - name: MYSQL_ROOT_USER
               valueFrom:
                 secretKeyRef:
-                  name: mysql-root-credentials
+                  name: mysql-credentials
                   key: MYSQL_ROOT_USER
-            - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-root-credentials
-                  key: MYSQL_ROOT_PASSWORD
             - name: MYSQL_DB_CUOTA
               valueFrom:
                 configMapKeyRef:
